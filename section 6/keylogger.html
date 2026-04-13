@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Keylogger Demo</title>
+</head>
+<body>
+
+    <h2>Keylogger Demonstration</h2>
+
+    <!-- Input field -->
+    <input type="text" id="inputBox" placeholder="Type something here..." />
+
+    <h3>Captured Keys:</h3>
+    <p id="output"></p>
+
+    <script>
+        // Get elements
+        const inputBox = document.getElementById("inputBox");
+        const output = document.getElementById("output");
+
+        // Store captured keys
+        let keys = "";
+
+        // Event listener for key presses
+        inputBox.addEventListener("keypress", function(event) {
+            keys += event.key;   // Capture key
+            output.textContent = keys;  // Display on page
+        });
+
+        /*
+        SECURITY IMPLICATIONS:
+
+        - Keyloggers can capture sensitive information like passwords,
+          credit card details, and personal messages.
+
+        - Attackers may inject such scripts via XSS vulnerabilities.
+
+        - Always avoid entering sensitive data on untrusted websites.
+
+        - Use HTTPS and secure input handling to prevent attacks.
+
+        - This example is for EDUCATIONAL PURPOSES ONLY.
+        */
+    </script>
+
+</body>
+</html>
